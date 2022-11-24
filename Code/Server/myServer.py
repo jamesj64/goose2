@@ -29,7 +29,7 @@ def stopMovement():
     print("stopMovement")
 
 def moveForward():
-    PWM.setMotorModel(500,500,500,500)
+    PWM.setMotorModel(1000,1000,1000,1000)
     print("moveForward")
 
 def moveRight():
@@ -56,6 +56,10 @@ def hello_world():
             moveForward()
         if content['stopMovement'] == "1":
             stopMovement()
+        if content['moveRight'] == "1":
+            moveRight()
+        if content['moveLeft'] == '1':
+            moveLeft()
         if content['buzzer'] == "1":
             bState = not bState
         if content['getDistance'] == "1":
