@@ -128,3 +128,24 @@ function getDistance() {
         }
     });
 }
+
+function poop() {
+    $.post("/", {
+        buzzer: 0,
+        moveForward: 0,
+        stopMovement: 0,
+        moveBackward: 0,
+        moveRight: 0,
+        moveLeft: 0,
+        getDistance: 0,
+        poop: 1
+    }, function(err, req, resp) {
+        if (req == "success") {
+            console.log("what the?! it works!");
+            //console.log(resp.responseJSON.distance);
+            //alert(`distance ${resp.responseJSON.distance}`);
+        } else {
+            console.log("error");
+        }
+    });
+}
