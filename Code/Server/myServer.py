@@ -54,6 +54,8 @@ def hello_world():
         content = request.form
         if content['moveForward'] == "1":
             moveForward()
+        if content['moveBackward'] == "1":
+            moveForward()
         if content['stopMovement'] == "1":
             stopMovement()
         if content['moveRight'] == "1":
