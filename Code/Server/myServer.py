@@ -19,7 +19,7 @@ ultrasonic = Ultrasonic()
 bState = False
 
 class Servo:
-    def __init_(self):
+    def __init__(self):
         self.PwmServo = PCA9685(0x40, debug=True)
     def setServoPwm(self,channel,angle,error=10):
         angle=int(angle)
