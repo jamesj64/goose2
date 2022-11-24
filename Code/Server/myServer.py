@@ -18,6 +18,13 @@ ultrasonic = Ultrasonic()
 
 bState = False
 
+class Servo:
+    def __init_(self):
+        self.PwmServo = PCA9685(0x40, debug=True)
+    def setServoPwm(self,channel,angle,error=10):
+        angle=int(angle)
+        if channel=='2':
+            self.PwmServo.setServoPulse(10,500+int((angle+error)/0.09))
 
 GPIO.setwarnings(False)
 Buzzer_Pin = 17
@@ -44,6 +51,13 @@ def moveBackward():
     PWM.setMotorModel(-1000,-1000,-1000,-1000)
     print("moveBackward")
 
+def poop():
+    servoThing = Servo()
+    servoThing.setServoPwm('2',0)
+    servoThing.setServoPwm('2',100)
+    time.sleep(0.1)
+    servoThing.setServoPwm('2',0)
+
 app = Flask(__name__)
 app._static_folder = os.path.abspath("templates/static/")
 
@@ -55,7 +69,7 @@ def hello_world():
         if content['moveForward'] == "1":
             moveForward()
         if content['moveBackward'] == "1":
-            moveForward()
+            moveBackward()
         if content['stopMovement'] == "1":
             stopMovement()
         if content['moveRight'] == "1":
@@ -67,6 +81,9 @@ def hello_world():
         if content['getDistance'] == "1":
             print(ultrasonic.get_distance())
             return jsonify({"distance": ultrasonic.get_distance()}), 200
+        if content['poop'] == "1":
+            print("poop")
+            poop()
         if bState:
             GPIO.output(Buzzer_Pin,GPIO.HIGH)
             print("buzz on \n")
