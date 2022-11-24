@@ -9,7 +9,8 @@ function toggleBuzzer() {
         moveBackward: 0,
         moveRight: 0,
         moveLeft: 0,
-        getDistance: 0
+        getDistance: 0,
+        poop: 0
     }, function(err, req, resp) {
         if (req == "success") {
             console.log("what the?! it works!");
@@ -27,7 +28,8 @@ function moveForward() {
         moveBackward: 0,
         moveRight: 0,
         moveLeft: 0,
-        getDistance: 0
+        getDistance: 0,
+        poop: 0
     }, function(err, req, resp) {
         if (req == "success") {
             console.log("what the?! it works!");
@@ -45,7 +47,8 @@ function stopMovement() {
         moveBackward: 0,
         moveRight: 0,
         moveLeft: 0,
-        getDistance: 0
+        getDistance: 0,
+        poop: 0
     }, function(err, req, resp) {
         if (req == "success") {
             console.log("what the?! it works!");
@@ -63,7 +66,8 @@ function moveRight() {
         moveBackward: 0,
         moveRight: 1,
         moveLeft: 0,
-        getDistance: 0
+        getDistance: 0,
+        poop: 0
     }, function(err, req, resp) {
         if (req == "success") {
             console.log("what the?! it works!");
@@ -81,7 +85,8 @@ function moveBackward() {
         moveBackward: 1,
         moveRight: 0,
         moveLeft: 0,
-        getDistance: 0
+        getDistance: 0,
+        poop: 0
     }, function(err, req, resp) {
         if (req == "success") {
             console.log("what the?! it works!");
@@ -99,7 +104,8 @@ function moveLeft() {
         moveBackward: 0,
         moveRight: 0,
         moveLeft: 1,
-        getDistance: 0
+        getDistance: 0,
+        poop: 0
     }, function(err, req, resp) {
         if (req == "success") {
             console.log("what the?! it works!");
@@ -117,7 +123,8 @@ function getDistance() {
         moveBackward: 0,
         moveRight: 0,
         moveLeft: 0,
-        getDistance: 1
+        getDistance: 1,
+        poop: 0
     }, function(err, req, resp) {
         if (req == "success") {
             console.log("what the?! it works!");
