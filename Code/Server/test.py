@@ -53,6 +53,8 @@ def test_Ultrasonic():
             print ("Obstacle distance is "+str(data)+"CM")
             time.sleep(1)
     except KeyboardInterrupt:
+        GPIO.cleanup()
+        
         print ("\nEnd of program")
 
 
