@@ -59,3 +59,5 @@ def exit_handler():
     GPIO.cleanup()
     GPIO.output(Buzzer_Pin,GPIO.LOW)
     PWM.setMotorModel(0,0,0,0)
+
+atexit.register(exit_handler)
