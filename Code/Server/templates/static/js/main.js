@@ -1,27 +1,44 @@
-let buzzerState = 0;
-
-$(document).ready(function() {
-    console.log("HII");
-    /*$.post("/", {
-        kittens: 123456789
-    }, function(err, req, resp) {
-        if (req == "success") {
-            console.log("what the?! it works!");
-        } else {
-            console.log("FUCK THIS");
-        }
-    });*/
-});
+/*$(document).ready(function() {
+});*/
 
 function toggleBuzzer() {
-    buzzerState = buzzerState == 0 ? 1 : 0;
     $.post("/", {
-        buzzer: buzzerState
+        buzzer: 1,
+        moveForward: 0,
+        stopMovement: 0
     }, function(err, req, resp) {
         if (req == "success") {
             console.log("what the?! it works!");
         } else {
-            console.log("FUCK THIS");
+            console.log("error");
+        }
+    });
+}
+
+function moveForward() {
+    $.post("/", {
+        buzzer: 0,
+        moveForward: 1,
+        stopMovement: 0
+    }, function(err, req, resp) {
+        if (req == "success") {
+            console.log("what the?! it works!");
+        } else {
+            console.log("error");
+        }
+    });
+}
+
+function stopMovement() {
+    $.post("/", {
+        buzzer: 0,
+        moveForward: 0,
+        stopMovement: 1
+    }, function(err, req, resp) {
+        if (req == "success") {
+            console.log("what the?! it works!");
+        } else {
+            console.log("error");
         }
     });
 }
