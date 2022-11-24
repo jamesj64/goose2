@@ -56,18 +56,11 @@ def hello_world():
             moveForward()
         if content['stopMovement'] == "1":
             stopMovement()
-        if content['moveBackward'] == "1":
-            moveBackward()
-        if content['moveRight'] == "1":
-            moveRight()
-        if content['moveLeft'] == "1":
-            moveLeft()
         if content['buzzer'] == "1":
             bState = not bState
         if content['getDistance'] == "1":
             print(ultrasonic.get_distance())
             return jsonify({"distance": ultrasonic.get_distance()}), 200
-            print("distance")
         if bState:
             GPIO.output(Buzzer_Pin,GPIO.HIGH)
             print("buzz on \n")
